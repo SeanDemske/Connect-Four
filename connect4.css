@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ranchers', cursive;
+  font-size: 1.2rem;
+  background-image: url("./assets/wood-bg.png");
+  background-repeat: repeat;
+  background-size: 80%;
+  color: rgb(255, 173, 65);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+/* game board table */
+#game {
+  margin: auto;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game button {
+  margin: 50px;
+  width: 300px;
+  background-color: rgb(255, 173, 65);
+  text-shadow: 2px 2px #ff0000;
+  border: 4px solid  black;
+}
+
+#game h1 {
+  text-align: center;
+  margin: 10px;
+  text-shadow: 2px 2px #ff0000;
+}
+
+#board {
+  padding: 20px;
+  border: 25px solid rgb(109, 155, 255);
+  border-radius: 25px;
+  background-color: rgb(95, 145, 255);
+  box-shadow: 5px 10px #525252;
+}
+
+#board td {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  position: relative;
+  text-align:center;
+}
+
+.slot-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-slot {
+  background-color: white;
+  width: 80%;
+  height: 83%;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 10px 10px 0px 5px rgba(0,0,0,0.16);
+  -moz-box-shadow: inset 10px 10px 0px 5px rgba(0,0,0,0.16);
+  box-shadow: inset 10px 10px 0px 5px rgba(0,0,0,0.16);
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  position: absolute;
+  width: 82%;
+  height: 85%;
+  border-radius: 50%;
+  animation-name: drop-animation;
+  animation-duration: 75ms;
+  z-index: 0;
+}
+
+@keyframes drop-animation {
+	from {
+		transform: translateY(-800%);
+	}
+	to {
+		transform: translateY(0px);
+	}
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.p1 {
+  background-color: rgb(255, 88, 88);
+}
+
+.p1-text {
+  color: rgb(255, 88, 88);
+}
+
+.p2 {
+  background-color: rgb(253, 195, 70);
+}
+
+.p2-text {
+  color: rgb(253, 195, 70);
+}
+
+/* column-top is table row of clickable areas for each column */
+/* #column-top {
+  background-color: transparent;
+} */
+
+#column-top td {
+  cursor: pointer;
+  border: dashed 3px rgb(250, 193, 70);
+  border-radius: 50px;
+}
+
+#column-top td:hover {
+  opacity: .5;
+}
+
+/* ----------------- */
+    /* Moddal */
+/* ----------------- */
+.modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 26, 44, 0.26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window {
+  height: 300px;
+  width: 500px;
+  border-radius: 25px;
+  padding: 25px;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 8px solid rgb(250, 193, 70);
+  box-shadow: 5px 10px #02020250;
+  position: absolute;
+  z-index: 1;
+}
+
+.modal-container h2 {
+  margin: 15px;
+
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.9rem;
+  height: 5rem;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  background: rgb(60, 104, 226);
+  outline: none;
+  padding: 0.5rem 1.8rem;
+  box-shadow: 0 0.3rem rgba(160, 167, 189, 0.65);
+  font-weight: 700;
+  font-family: 'Ranchers', cursive;
+  background-color: rgb(255, 173, 65);
+  text-shadow: 2px 2px #ff0000;
+  border: 4px solid  black;
+}
+
+button:hover {
+  filter: brightness(150%);
+}
+
+/* Helper class */
+.hidden {
+  display: none;
+}
+
+.disabled {
+  pointer-events: none;
+}
+

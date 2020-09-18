@@ -1,0 +1,26 @@
+<!doctype html>
+<head>
+  <title>Connect 4</title>
+  <link href="connect4.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Game -->
+<div id="game">
+  <h1>Connect 4</h1>
+  <table id="board" cellspacing="0" cellpadding="0"></table>
+  <button id="btn-restart">Restart</button>
+</div>
+
+<!-- Modal -->
+<div id="win-modal" class="modal-container hidden">
+  <div class="modal-window">
+    <h2 id="win-msg">Player 1 Wins!</h2>
+    <button id="btn-play-again">Play Again</button>
+  </div>
+</div>
+
+<script src="connect4.js"></script>
+
+</body>
+</html>
